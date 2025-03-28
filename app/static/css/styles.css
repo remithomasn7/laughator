@@ -1,0 +1,64 @@
+/* Réinitialiser les marges et padding par défaut du corps */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden; /* Désactive le défilement */
+}
+
+/* Styles communs pour les écrans */
+#start-screen, #game-screen, #win-screen, #lose-screen {
+    text-align: center;
+    color: #c0c0c0; /* Texte clair pour contraster avec le fond sombre */
+    font-family: 'Arial Black', Gotham, sans-serif;
+    background-color: #121212; /* Fond sombre */
+    min-height: 100vh; /* Prend au moins toute la hauteur de la fenêtre */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centre verticalement */
+    align-items: center; /* Centre horizontalement */
+    padding: 20px; /* Ajoute un peu d'espace autour du contenu */
+    box-sizing: border-box; /* Inclut les bordures et padding dans la taille totale */
+}
+
+/* Style pour la barre de progression */
+#progress-bar {
+    width: 80%; /* Largeur légèrement réduite pour un meilleur espacement */
+    background-color: #333; /* Couleur de fond plus sombre */
+    margin-top: 20px;
+    border-radius: 5px; /* Coins arrondis pour un effet plus doux */
+    overflow: hidden; /* Cache le débordement de la barre interne */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Ombre pour un effet 3D */
+}
+
+#progress-bar div {
+    height: 30px;
+    background-color: #4CAF50; /* Vert Joker */
+    width: 0%;
+    transition: width 0.3s ease; /* Transition fluide pour la largeur */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+/* Style pour les messages */
+h1 {
+    color: #4CAF50; /* Vert Joker */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre pour un effet de profondeur */
+    font-size: 2.5em; /* Taille de police plus grande pour les titres */
+}
+
+/* Style pour les boutons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+    background-color: #45a049;
+}

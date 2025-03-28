@@ -1,0 +1,43 @@
+# Environnement virtuel
+venv/
+
+# Fichiers de configuration locaux
+.env
+
+# Fichiers de dépendances
+requirements.txt
+
+# Fichiers de cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Fichiers de log
+*.log
+
+# Fichiers de sauvegarde
+*.bak
+*.swp
+
+# Fichiers de build
+build/
+dist/
+
+# Fichiers de configuration d'outils
+.vscode/
+.idea/
+
+# Fichiers de tests
+*.pytest_cache/
+
+# Fichiers de couverture de code
+.coverage
+.tox/
+
+# Fichiers de documentation générés
+docs/_build/
+
+# Fichiers de cache de navigateur
+.DS_Store
+Thumbs.db
