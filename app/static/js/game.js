@@ -22,6 +22,9 @@ message.textContent = getRandomPunchline();
 
 let gameInterval;
 let gameTimeout;
+let laughTime = 0; // Accumulate laugh time in milliseconds
+const laughThreshold = 21;
+const laughDuration = 5000; // In milliseconds
 
 function startGame() {
     navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
@@ -34,8 +37,9 @@ function startGame() {
         const dataArray = new Uint8Array(bufferLength);
 
         let startTime = Date.now();
+        let lastTime = startTime;
 
-        function update() {
+        function update(currentTime) {
             if (Date.now() - startTime > 30000) {
                 endGame(false);
                 return;
@@ -44,18 +48,24 @@ function startGame() {
             analyser.getByteFrequencyData(dataArray);
             const average = dataArray.reduce((a, b) => a + b) / bufferLength;
             const percentage = (average / 255) * 100;
+            console.log(percentage);
 
-            progressBar.style.width = `${percentage}%`;
-
-            if (percentage >= 70) {
-                endGame(true);
-            } else {
-                gameInterval = requestAnimationFrame(update);
+            if (percentage >= laughThreshold) {
+                const deltaTime = currentTime - lastTime; // Delta time in milliseconds
+                laughTime += deltaTime; // Increment laugh time
+                if (laughTime >= laughDuration) {
+                    endGame(true);
+                    return;
+                }
             }
+
+            progressBar.style.width = `${(laughTime / laughDuration) * 100}%`;
+
+            lastTime = currentTime;
+            gameInterval = requestAnimationFrame(update);
         }
 
         gameInterval = requestAnimationFrame(update);
-        gameTimeout = setTimeout(() => endGame(false), 30000);
     }).catch(err => {
         console.error('Error accessing the microphone:', err);
     });
