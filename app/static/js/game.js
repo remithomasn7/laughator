@@ -71,4 +71,28 @@ function endGame(isWin) {
     }
 }
 
+function setRandomPosition() {
+    const maxX = window.innerWidth - message.offsetWidth;
+    const maxY = window.innerHeight - message.offsetHeight;
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+    message.style.position = 'absolute';
+    message.style.left = `${randomX}px`;
+    message.style.top = `${randomY}px`;
+}
+
+function blinkMessage() {
+    const visibleTime = Math.random() * 2000 + 2000;
+    const hiddenTime = Math.random() * 1000;
+    if (message.style.visibility === 'hidden') {
+        setRandomPosition();
+        message.style.visibility = 'visible';
+        setTimeout(blinkMessage, visibleTime);
+    } else {
+        message.style.visibility = 'hidden';
+        setTimeout(blinkMessage, hiddenTime);
+    }
+}
+
 startGame();
+blinkMessage();
