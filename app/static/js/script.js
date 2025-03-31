@@ -1,7 +1,7 @@
 const startScreen = document.getElementById('start-screen');
 const gameScreen = document.getElementById('game-screen');
 const winScreen = document.getElementById('win-screen');
-const loseScreen = document.getElementById('lose-screen');
+const loseScreen = document.getElementById('loose-screen');
 const message = document.getElementById('message');
 const progressBar = document.querySelector('#progress-bar div');
 const audio = new Audio('/static/sounds/laugh_song.mp3'); // Chemin vers le fichier audio
@@ -74,14 +74,14 @@ function endGame(isWin) {
             };
         });
     } else {
-        loseScreen.style.display = 'block';
+        looseScreen.style.display = 'block';
         setTimeout(resetGame, 5000);
     }
 }
 
 function resetGame() {
     winScreen.style.display = 'none';
-    loseScreen.style.display = 'none';
+    looseScreen.style.display = 'none';
     startScreen.style.display = 'block';
     isPlaying = false;
 }

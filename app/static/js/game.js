@@ -1,6 +1,25 @@
 const message = document.getElementById('message');
 const progressBar = document.querySelector('#progress-bar div');
 
+const punchlines = [
+    "C'est à en mourir de rire, n'est ce pas ?",
+    "Rire est la meilleure médecine !",
+    "Rire, c'est contagieux.",
+    "Riez... si vous l'osez.",
+    "La folie a un son : le rire.",
+    "Tu ne peux pas arrêter de rire, n'est-ce pas ?",
+    "Pourquoi si sérieux ? La mort adore l'humour.",
+    "Un éclat de rire avant l'éclat... final.",
+    "Le rire est juste un cri déguisé.",
+];
+
+function getRandomPunchline() {
+    const randomIndex = Math.floor(Math.random() * punchlines.length);
+    return punchlines[randomIndex];
+}
+
+message.textContent = getRandomPunchline();
+
 let gameInterval;
 let gameTimeout;
 
@@ -28,7 +47,7 @@ function startGame() {
 
             progressBar.style.width = `${percentage}%`;
 
-            if (percentage >= 10) {
+            if (percentage >= 70) {
                 endGame(true);
             } else {
                 gameInterval = requestAnimationFrame(update);
@@ -48,7 +67,7 @@ function endGame(isWin) {
     if (isWin) {
         window.location.href = '/win';
     } else {
-        window.location.href = '/lose';
+        window.location.href = '/loose';
     }
 }
 

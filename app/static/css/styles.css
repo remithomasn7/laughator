@@ -1,16 +1,26 @@
+@font-face {
+    font-family: "Gothic Joker";
+    src: url("https://db.onlinewebfonts.com/t/d9aa6394c95a2dd5ba991827aedfa00c.eot");
+    src: url("https://db.onlinewebfonts.com/t/d9aa6394c95a2dd5ba991827aedfa00c.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/d9aa6394c95a2dd5ba991827aedfa00c.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/d9aa6394c95a2dd5ba991827aedfa00c.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/d9aa6394c95a2dd5ba991827aedfa00c.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/d9aa6394c95a2dd5ba991827aedfa00c.svg#Gothic Joker")format("svg");
+}
+
 /* Réinitialiser les marges et padding par défaut du corps */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     overflow: hidden; /* Désactive le défilement */
+    font-family: "Gothic Joker";
 }
 
 /* Styles communs pour les écrans */
-#start-screen, #game-screen, #win-screen, #lose-screen {
+#start-screen, #game-screen, #win-screen, #loose-screen {
     text-align: center;
     color: #c0c0c0; /* Texte clair pour contraster avec le fond sombre */
-    font-family: 'Arial Black', Gotham, sans-serif;
     background-color: #121212; /* Fond sombre */
     min-height: 100vh; /* Prend au moins toute la hauteur de la fenêtre */
     display: flex;
