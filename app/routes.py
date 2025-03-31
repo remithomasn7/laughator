@@ -14,6 +14,6 @@ def game():
 def win():
     return render_template('win.html')
 
-@bp.route('/lose')
-def lose():
-    return render_template('lose.html')
+@bp.route('/loose')
+def loose():
+    return render_template('loose.html')
