@@ -75,7 +75,7 @@ function endGame(isWin) {
     if (isWin) {
         window.location.href = '/win';
     } else {
-        window.location.href = '/';
+        window.location.href = '/loose';
     }
 }
 
