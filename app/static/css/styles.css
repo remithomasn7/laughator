@@ -17,6 +17,11 @@ body, html {
     font-family: "Gothic Joker";
 }
 
+#start-button {
+    font-size: 5em; /* Adjust the font size to make the button text larger */
+    font-family: "Gothic Joker";
+}
+
 /* Styles communs pour les écrans */
 #start-screen, #game-screen, #win-screen, #loose-screen {
     text-align: center;

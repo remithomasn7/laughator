@@ -3,3 +3,7 @@ document.addEventListener('keydown', (event) => {
         window.location.href = '/game';
     }
 });
+
+document.getElementById('start-button').addEventListener('click', function() {
+    window.location.href = '/game';
+});

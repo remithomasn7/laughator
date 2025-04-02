@@ -3,12 +3,10 @@ const progressBar = document.querySelector('#progress-bar div');
 
 const punchlines = [
     "C'est à en mourir de rire, n'est ce pas ?",
-    "Rire est la meilleure médecine !",
     "Rire, c'est contagieux.",
     "Riez... si vous l'osez.",
     "La folie a un son : le rire.",
     "Tu ne peux pas arrêter de rire, n'est-ce pas ?",
-    "Pourquoi si sérieux ? La mort adore l'humour.",
     "Un éclat de rire avant l'éclat... final.",
     "Le rire est juste un cri déguisé.",
 ];
@@ -23,7 +21,7 @@ message.textContent = getRandomPunchline();
 let gameInterval;
 let gameTimeout;
 let laughTime = 0; // Accumulate laugh time in milliseconds
-const laughThreshold = 21;
+const laughThreshold = 75;
 const laughDuration = 5000; // In milliseconds
 
 function startGame() {
