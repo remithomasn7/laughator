@@ -74,8 +74,6 @@ function endGame(isWin) {
     clearTimeout(gameTimeout);
     if (isWin) {
         window.location.href = '/win';
-    } else {
-        window.location.href = '/loose';
     }
 }
 
