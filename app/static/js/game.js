@@ -21,7 +21,7 @@ message.textContent = getRandomPunchline();
 let gameInterval;
 let gameTimeout;
 let laughTime = 0; // Accumulate laugh time in milliseconds
-const laughThreshold = 25;
+const laughThreshold = 15;
 const laughDuration = 5000; // In milliseconds
 
 function startGame() {
